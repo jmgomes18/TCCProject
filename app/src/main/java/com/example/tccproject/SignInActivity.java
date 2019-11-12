@@ -54,7 +54,7 @@ public class SignInActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         if(mAuth.getCurrentUser() != null) {
-            startActivity(new Intent(SignInActivity.this, MainActivity.class));
+            startActivity(new Intent(SignInActivity.this, MoradorActivity.class));
             finish();
         }
 
@@ -110,7 +110,7 @@ public class SignInActivity extends AppCompatActivity {
 
                         if(task.isSuccessful()) {
                             Log.d(TAG, "SignInWithEmail:success");
-                            Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+                            Intent intent = new Intent(SignInActivity.this, MoradorActivity.class);
                             startActivity(intent);
                             finish();
                         }
@@ -131,7 +131,7 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser() != null) {
-                    startActivity(new Intent(SignInActivity.this, MainActivity.class));
+                    startActivity(new Intent(SignInActivity.this, MoradorActivity.class));
                 }
             }
         };
