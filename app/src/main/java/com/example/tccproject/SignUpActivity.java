@@ -44,24 +44,6 @@ public class SignUpActivity extends AppCompatActivity {
         mFirebaseInstance = FirebaseDatabase.getInstance();
         mFirebaseDatabase = mFirebaseInstance.getReference("users");
 
-        mFirebaseInstance.getReference("app_title").setValue("Realtime Database");
-
-        mFirebaseInstance.getReference("app_title").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Log.e(DATA, "App title updated");
-
-                String appTitle = dataSnapshot.getValue(String.class);
-                getSupportActionBar().setTitle(appTitle);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e(DATA, "App title updated");
-            }
-        });
-
-
         TextView alreadySigned = findViewById(R.id.alreadyLogged);
 
         alreadySigned.setOnClickListener(new View.OnClickListener() {
