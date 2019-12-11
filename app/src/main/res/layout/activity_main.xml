@@ -6,22 +6,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/background_degrade"
     tools:context=".MainActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/logoMainScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo"
+        android:layout_gravity="center"
+    />
+
+    <TextView
+        android:id="@+id/currentUserTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
         android:text="Hello World!"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/signOutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SIGNOUT"
+        app:layout_constraintTop_toTopOf="parent"
     />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_gravity="bottom"
+        >
+
+        <Button
+            android:id="@+id/vehicleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SOLICITAR ENTRADA VEÍCULOS"
+            android:layout_gravity="bottom"
+            />
+
+        <Button
+            android:id="@+id/vehicleCloseButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FECHAR PORTÃO"
+            android:layout_gravity="bottom"
+            />
+
+        <Button
+            android:id="@+id/peopleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SOLICITAR ENTRADA PESSOA"
+            android:layout_gravity="bottom"
+            />
+
+        <Button
+            android:id="@+id/signOutButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="SIGNOUT" />
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

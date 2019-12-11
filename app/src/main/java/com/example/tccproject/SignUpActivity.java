@@ -46,13 +46,8 @@ public class SignUpActivity extends AppCompatActivity {
 
         TextView alreadySigned = findViewById(R.id.alreadyLogged);
 
-        alreadySigned.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
-                startActivity(intent);
-            }
-        });
+        final String cargo = "morador";
+
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -101,7 +96,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                         if(task.isSuccessful()) {
                             Log.d(TAG, "createUserWithEmail:success");
-                            User user = new User(name, email, password);
+                            User user = new User(name, email, password, cargo);
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
